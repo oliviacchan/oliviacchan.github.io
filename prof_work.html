@@ -1,21 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
+<head id="head.html">
   <meta charset="utf-8">
   <meta name="description" content="A portfolio website">
   <title>ENGL 3844 - Olivia Chan</title>
   <link  href="css/styles.css"rel="stylesheet" type="text/css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
 </head>
+<script>
+  $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+  });
+</script> 
 <body>
-  <header class="list">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="prof_work.html">Professional Work</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="about_me.html">About Me</a></li>
-      <li><a href="contact_info.html">Contact</a></li>
-    </ul>
-  </header>
+  <header id="header" class="list"></header>
   <section class="main">
     <h1>Professional Work</h1>
     <p>
@@ -45,9 +44,6 @@
       </li>
     </ul>
   </section>
-</main>
-<footer>
-  <p>&copy; Built by Olivia Chan: updated October 27, 2023</p>
-</footer>
+  <footer id="footer"></footer>
 </body>
 </html>

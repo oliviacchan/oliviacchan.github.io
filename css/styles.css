@@ -11,8 +11,21 @@ body {
 section {
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 65px;
+    padding-top: 60px;
     padding-bottom: 10px;
+}
+
+.home {
+    padding-top: 40px;
+    float: left;
+    margin: 0 1.5%;
+    width: 63%;
+}
+
+aside {
+    float: right;
+    margin: 0 1.5%;
+    width: 30%;
 }
 
 .list ul {
@@ -38,7 +51,7 @@ section {
 }
 
 .list li a:hover {
-    background-color: #cccccc;
+    background-color: #dedede;
 }
 
 img {

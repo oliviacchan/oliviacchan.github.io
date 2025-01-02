@@ -1,33 +1,115 @@
-html {
-    scroll-behavior: smooth;
-}
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    padding-left: 25px;
+    padding-right: 40px;
+  }
+  
+  .homeSkills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-body {
-    font-family: Verdana, Geneva, sans-serif;
+  .homeProjects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .personalProjects {
+    display: flex;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+  }
+  
+  .projects-content {
+    padding: 10px;
+    padding-left: 20px;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 15px;
+  }
+  
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    border-radius: 25%;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .carousel-button:first-of-type {
+    left: 10px;
+  }
+  
+  .carousel-button:last-of-type {
+    right: 10px;
+  }
+  
+  .carousel-image {
+    max-width: 72vh;
+    max-height: 100vh;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     margin-right: auto;
     margin-left: auto;
     min-height: 98.4vh;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
-}
-
-.front {
+  }
+  
+  .front {
     margin: 0;
-}
-
-section {
+  }
+  
+  section {
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 100px;
-    padding-bottom: 40px;
-}
-
-.home {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    /*padding: 50px;*/
+    position: relative;
+  }
+  
+  .home {
     padding-top: 40px;
-}
-
-.list ul {
+  }
+  
+  .anchor {
+    display: block;
+    height: 84px;
+    margin-top: -84px;
+    visibility: hidden;
+  }
+  
+  .main-anchor {
+    display: block;
+    height: 84px;
+  }
+  
+  .list ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -37,9 +119,9 @@ section {
     top: 0;
     width: 100%;
     box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
-}
-
-.list li a {
+  }
+  
+  .list li a {
     float: left;
     display: block;
     color: black;
@@ -47,132 +129,143 @@ section {
     padding: 18px 40px;
     text-decoration: none;
     font-size: 18px;
-}
-
-.list li a:hover {
+  }
+  
+  .list li a:hover {
     background-color: #dedede;
-}
-
-img {
-    border-radius: 50%;
-    object-fit: cover;
-    height: 350px;
-    width: 350px; 
-}
-
-.imgHome {
+  }
+  
+  /*img {*/
+  /*  border-radius: 50%;*/
+  /*  object-fit: cover;*/
+  /*  height: 350px;*/
+  /*  width: 350px;*/
+  /*}*/
+  
+  .imgHome {
     border-radius: 50%;
     object-fit: cover;
     height: auto;
-    width: 70%; 
-}
-
-.imgBorder {
+    width: 70%;
+  }
+  
+  .imgProj {
+    border-radius: 50%;
+    object-fit: cover;
+    max-height: 300px;
+    max-width: 300px;
+    margin-left: 50px;
+  }
+  
+  .imgBorder {
     margin: auto;
     padding-bottom: 40px;
     padding-left: 50px;
-}
-
-
-footer {
+  }
+  
+  
+  footer {
     border-top: 1px solid gray;
     text-align: center;
     font-size: .9em;
     margin-top: auto;
     padding-top: 4.5px;
     /* background-color: #f0f0f0; */
-}
-
-
-/* header stuff */
-
-.homeHeader {
+  }
+  
+  
+  /* header stuff */
+  
+  .homeHeader {
     top: 0;
     background-color: #f0f0f0;
     text-align: left;
     color: black;
     min-height: 100vh;
     display: flex;
-}
-
-.h1Home {
+  }
+  
+  .h1Home {
     font-size: calc(0.5em + 2vw);
     padding-bottom: .67em;
     border-bottom: 1px solid;
     line-height: 1.3;
-}
-
-.wrapper {
+  }
+  
+  .wrapper {
     max-width: 1150px;
     margin: auto;
     padding: 50px;
     display: block;
-}
-
-.intro {
+    padding-left: 100px;
+  }
+  
+  .intro {
     color: black;
-    font-size: 20px;
-}
-
-.buttonBox {
+    font-size: 18px;
+  }
+  
+  .buttonBox {
     display: flex;
     justify-content: center;
     align-content: center;
-}
-
-.pagesBox {
+  }
+  
+  .pagesBox {
     top: 0;
     width: 100%;
     display: block;
-    padding-top: 30px;
-    padding-left: 30px;
+    /*padding-top: 30px;*/
+    /*padding-left: 30px;*/
+    padding: 30px;
+    margin-bottom: 50px;
     position: fixed;
     background-size: 0%;
     background-color: #f0f0f0;
-    height: 60px;
     box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
-}
-.pages {
+    z-index: 99;
+  }
+  .pages {
     border-radius: 28px;
     border: 1px solid black;
     cursor: pointer;
     color: black;
-    font-size: 18px;
-    padding: 16px 31px;
+    font-size: 16px;
+    padding: 12px 25px;
     text-decoration: none;
-    margin: 1.69em auto;
+    margin: 1.5em auto;
     margin-right: 10px;
     width: 100%;
-    box-shadow: 3px 5px 0 rgba(0,0,0,0.19);
-}
-
-.pages:hover {
+    box-shadow: 3px 5px 0 rgba(0,0,0,0.10);
+  }
+  
+  .pages:hover {
     background-color: white;
-}
-
-
-.clickButton {
+  }
+  
+  
+  .clickButton {
     border-radius: 28px;
     border: 1px solid black;
     cursor: pointer;
     color: black;
-    font-size: 18px;
-    padding: 16px 31px;
+    font-size: 16px;
+    padding: 12px 25px;
     text-decoration: none;
-    margin: 1.69em auto;
-    box-shadow: 3px 5px 0 rgba(0,0,0,0.19);
-}
-
-.clickButton:hover {
+    margin: 1.5em auto;
+    box-shadow: 3px 5px 0 rgba(0,0,0,0.10);
+  }
+  
+  .clickButton:hover {
     background-color: white;
-}
-
-.clickButton:active {
+  }
+  
+  .clickButton:active {
     position: relative;
     top: 1px;
-}
-
-.blurb {
+  }
+  
+  .blurb {
     box-shadow: 0 0px 1px 0 rgb(0 0 0 / 40%);
     width: 100%;
-}
+  }

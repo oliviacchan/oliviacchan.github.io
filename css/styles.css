@@ -279,10 +279,12 @@
     border: 1px solid rgb(204, 204, 204);
     cursor: pointer;
     color: black;
+    background-color: #f4f4f4;
     /* font-size: 16px; */
     padding: 6px 12px;
     text-decoration: none;
     margin: 1.5em auto;
+    cursor: default;
   }
   
   .clickButton {

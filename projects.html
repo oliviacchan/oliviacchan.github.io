@@ -43,64 +43,84 @@
 <body>
   <header id="header" class="list"></header>
     <span class="main-anchor"></span>
-    <h1 style="padding-left: 50px;">School Projects</h1>
-    <div class="projects">
-        <div class="carousel">
-            <button class="carousel-button" onclick="prevImageWeb()">
-                <i class="fa fa-arrow-left"></i>
-            </button>
-            <img id="web-carousel-image" src="web-project/home.png" class="carousel-image">
-            <button class="carousel-button" onclick="nextImageWeb()">
-                <i class="fa fa-arrow-right"></i>
-            </button>
+    <section>
+        <h1 style="padding-left: 50px;">School Projects</h1>
+        <div class="projects">
+            <div class="carousel">
+                <button class="carousel-button" onclick="prevImageWeb()">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+                <img id="web-carousel-image" src="web-project/home.png" class="carousel-image">
+                <button class="carousel-button" onclick="nextImageWeb()">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="projects-content">
+                <h3>Beyond the Books - Online Bookstore</h3>
+                <p style="margin-top: -12px">CS 5244: Web Application Development</p>
+                <p style="margin-top: -12px"><em>Aug 2024 - Dec 2024</em></p>
+                <uL>
+                    <li>Developed a data-centric online bookstore that includes session handling, database management, and user history.</li>
+                    <li>Use REST APIs and the data access object (DAO) pattern to create dynamically-generated web content</li>
+                </uL>
+                <div>
+                    <button class="project-button">HTML</button>
+                    <button class="project-button">CSS</button>
+                    <button class="project-button">TypeScript</button>
+                    <button class="project-button">React</button>
+                    <button class="project-button">MySQL</button>
+                    <button class="project-button">Servlets</button>
+                    <button class="project-button">JSP</button>
+                </div>
+            </div>
         </div>
-        <div class="projects-content">
-            <h2>Beyond the Books - Online Bookstore</h2>
-            <h4>CS 5244: Web Application Development (Aug 2024 - Dec 2024)</h4>
-            <uL>
-                <li>Developed a data-centric online bookstore that includes session handling, database management, and user history.</li>
-                <li>Use REST APIs and the data access object (DAO) pattern to create dynamically-generated web content</li>
-            </uL>
+        <div class="projects">
+            <div class="carousel">
+                <button class="carousel-button" onclick="prevImageDB()">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+                <img id="db-carousel-image" src="db-project/login.png" class="carousel-image">
+                <button class="carousel-button" onclick="nextImageDB()">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="projects-content">
+                <h3>BlossomDB</h3>
+                <p style="margin-top: -12px">CS 4604: Introduction to Database Management Systems</p>
+                <p style="margin-top: -12px"><em>Aug 2024 - Dec 2024</em></p>
+                <ul>
+                    <li>Implemented a UI which allowed a user to perform create, read, update, and delete requests to the SQL database.</li>
+                    <li>Limited access to different UI components and database requests depending on the users role</li>
+                </ul>
+                <div>
+                    <button class="project-button">React</button>
+                    <button class="project-button">JavaScript</button>
+                    <button class="project-button">MySQL</button>
+                    <button class="project-button">Express.js</button>
+                    <button class="project-button">Node.js</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="projects">
-        <div class="carousel">
-            <button class="carousel-button" onclick="prevImageDB()">
-                <i class="fa fa-arrow-left"></i>
-            </button>
-            <img id="db-carousel-image" src="db-project/login.png" class="carousel-image">
-            <button class="carousel-button" onclick="nextImageDB()">
-                <i class="fa fa-arrow-right"></i>
-            </button>
+        <h1 style="padding-left: 50px;">Personal Projects</h1>
+        <div class="personalProjects">
+            <img class="imgProj" src="pics/me.JPG" alt="Olivia Chan">
+            <div style="padding-left: 75px;">
+                <h2>Website Portfolio</h2>
+                <h4>This website!</h4>
+                <p>
+                    I have worked on making my personal portfolio from scratch using the knowledge I have obtained
+                    from classes I have taken and experiences I have had. I am still working on updating my website
+                    with my projects, but for now, feel free to take a look at what I have so far! Before you head
+                    out, let me tell you a little about me. I am currently a senior at Virginia Tech majoring in
+                    Computer Science with minors in Human Computer Interaction & Mathematics. I enjoy hiking,
+                    biking, and all things outdoors, you name it and I am there! I always love trying new things and
+                    taking part in new adventures. At school, you will typically find me debugging my code, running
+                    to some meeting, or jump roping with my friends. Okay, that's all from me, see you on the flip
+                    side! &#128579;
+                </p>
+            </div>
         </div>
-        <div class="projects-content">
-            <h2>BlossomDB</h4>
-            <h4>CS 4604: Introduction to Database Management Systems (Aug 2024 - Dec 2024)</h4>
-            <ul>
-                <li>Implemented a UI which allowed a user to perform create, read, update, and delete requests to the SQL database.</li>
-                <li>Limited access to different UI components and database requests depending on the users role</li>
-            </ul>
-        </div>
-    </div>
-    <h1 style="padding-left: 50px;">Personal Projects</h1>
-    <div class="personalProjects">
-        <img class="imgProj" src="pics/me.JPG" alt="Olivia Chan">
-        <div style="padding-left: 75px;">
-            <h2>Website Portfolio</h2>
-            <h4>This website!</h4>
-            <p>
-                I have worked on making my personal portfolio from scratch using the knowledge I have obtained
-                from classes I have taken and experiences I have had. I am still working on updating my website
-                with my projects, but for now, feel free to take a look at what I have so far! Before you head
-                out, let me tell you a little about me. I am currently a senior at Virginia Tech majoring in
-                Computer Science with minors in Human Computer Interaction & Mathematics. I enjoy hiking,
-                biking, and all things outdoors, you name it and I am there! I always love trying new things and
-                taking part in new adventures. At school, you will typically find me debugging my code, running
-                to some meeting, or jump roping with my friends. Okay, that's all from me, see you on the flip
-                side! &#128579;
-            </p>
-        </div>
-    </div>
+    </section>
   <footer id="footer"></footer>
 </body>
 </html>

@@ -84,7 +84,7 @@
   }
   
   .carousel-image {
-    max-width: 72vh;
+    max-width: 32vw;
     max-height: 100vh;
     object-fit: cover;
     border-radius: 10px;
@@ -273,7 +273,17 @@
   .pages:hover {
     background-color: white;
   }
-  
+
+  .project-button {
+    border-radius: 28px;
+    border: 1px solid rgb(204, 204, 204);
+    cursor: pointer;
+    color: black;
+    /* font-size: 16px; */
+    padding: 6px 12px;
+    text-decoration: none;
+    margin: 1.5em auto;
+  }
   
   .clickButton {
     border-radius: 28px;

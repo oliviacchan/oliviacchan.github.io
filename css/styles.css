@@ -17,19 +17,19 @@
 
   .orgs {
     display: grid;
-    grid-template-columns: 55vw auto;
+    grid-template-columns: 50vw auto;
     justify-content: space-evenly;
     justify-items: center;
     align-content: space-evenly;
     align-items: center;
-    /* border: 1px solid black; */
   }
 
   .orgs-pic {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
-    /* border: 1px solid black; */
+    margin: 40px;
+    margin-right: -50px;
    }
 
    .imgOrg {
@@ -91,7 +91,7 @@
   }
 
   .home-carousel-image {
-    max-width: 90%;
+    max-width: 95%;
     max-height: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -116,10 +116,10 @@
   }
   
   section {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     position: relative;
   }
   
@@ -188,9 +188,10 @@
   }
 
   .imgBorder {
-    margin: auto;
-    padding-bottom: 40px;
-    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
   }
   
   
@@ -224,11 +225,10 @@
   }
   
   .wrapper {
-    /* max-width: 1150px; */
     margin: auto;
-    padding: 50px;
+    padding: 40px;
     display: block;
-    padding-left: 100px;
+    padding-left: 110px;
   }
   
   .intro {

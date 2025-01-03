@@ -177,6 +177,7 @@ section {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  left: 0;
   overflow: hidden;
   background-color: #f0f0f0;
   position: fixed;
@@ -490,56 +491,6 @@ footer {
     align-items: center;
     padding-right: 0px;
   }
-
-  /* .hamburger {
-    display: flex;
-  }
-
-  .list {
-    display: flex;
-  }
-
-  /* Mobile menu styles */
-  /* .list ul {
-    display: none;  
-    top: 60px;  
-    width: 100%;
-    background-color: #f0f0f0;
-    padding: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-radius: 5px;
-    align-items: center;
-    align-content: center;
-    align-self: center;
-    position: relative;
-    z-index: 800;
-  }
-
-
-  .list ul.active {
-    display: block;  
-    position: relative;
-    margin-top: 10px;
-  }
-
-  .list ul.hover {
-    display: block;
-    position: absolute;
-    cursor: pointer;
-    background-color: #dedede;
-  }
-
-  .list li a {
-    text-align: center;
-    margin: 10px 0;
-    padding: 12px;
-  }
-
-  .list a {
-    font-size: 18px;
-    display: block;
-  } */
 }
 
 /* Header Styles */
@@ -655,7 +606,6 @@ footer {
 
   .list li a:hover {
     background-color: #dedede;
-    border: 1px solid black;
   }
 
   .list a {

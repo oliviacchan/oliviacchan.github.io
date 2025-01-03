@@ -1,314 +1,667 @@
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(2 , 1fr);
-    padding-left: 25px;
-    padding-right: 40px;
-  }
-  
-  .homeSkills {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Default layout styles for larger screens */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 25px;
+  padding-right: 40px;
+}
 
-  .homeProjects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+.homeSkills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
-  .orgs {
-    display: grid;
-    grid-template-columns: 50vw auto;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
-  }
+.homeProjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
-  .orgs-pic {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-content: center;
-    margin: 40px;
-    margin-right: -50px;
-   }
+.about-me {
+  padding-right: 75px;
+}
 
-   .imgOrg {
-        border-radius: 30%;
-        object-fit: cover;
-        height: auto;
-        width: 100%;
-    }
-  
-  .personalProjects {
-    display: flex;
-    padding-left: 60px;
-    padding-bottom: 30px;
-    padding-right: 50px;
-  }
-  
-  .projects-content {
-    padding: 10px;
-    padding-left: 20px;
-  }
-  
-  .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 15px;
-  }
-  
-  .carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    border-radius: 25%;
-    transform: translateY(-50%);
-  }
-  
-  .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  .carousel-button:first-of-type {
-    left: 10px;
-  }
-  
-  .carousel-button:last-of-type {
-    right: 10px;
-  }
-  
-  .carousel-image {
-    max-width: 32vw;
-    max-height: 100vh;
-    object-fit: cover;
-    border-radius: 10px;
-  }
+.orgs {
+  display: grid;
+  grid-template-columns: 50vw auto; /* Side by side on desktop */
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  margin-right: -25px;
+}
 
-  .home-carousel-image {
-    max-width: 95%;
-    max-height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    margin-right: auto;
-    margin-left: auto;
-    min-height: 98.4vh;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .front {
-    margin: 0;
-  }
-  
+/* Basic grid layout for images in .orgs-pic */
+.orgs-pic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  grid-gap: 20px; /* Adds space between grid items */
+  align-items: center;
+  justify-items: center;
+  margin-top: 40px;
+  max-width: 90%; /* Max width of container to prevent too much stretching */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure images are responsive */
+.imgOrg {
+  border-radius: 30%;
+  object-fit: cover;
+  width: 100%;
+  max-width: 300px; /* Ensure images don't get too large */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for interaction */
+}
+
+/* Staggered effect for images on larger screens */
+.orgs-pic img:nth-child(1) {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  transform: translateX(3%) translateY(-5%);
+}
+
+.orgs-pic img:nth-child(2) {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  transform: translateX(-10%) translateY(78%);
+}
+
+.orgs-pic img:nth-child(3) {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  transform: translateX(-12%) translateY(0%);
+}
+
+/* Mobile adjustments - Stack the images vertically */
+.personalProjects {
+  display: flex;
+  padding-left: 60px;
+  padding-bottom: 30px;
+  padding-right: 50px;
+}
+
+.projects-content {
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 15px;
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  border-radius: 25%;
+  transform: translateY(-50%);
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button:first-of-type {
+  left: 10px;
+}
+
+.carousel-button:last-of-type {
+  right: 10px;
+}
+
+.carousel-image {
+  max-width: 32vw;
+  max-height: 100vh;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.home-carousel-image {
+  max-width: 95%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Work Sans', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 98.4vh;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.front {
+  margin: 0;
+}
+
+section {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.home {
+  padding-top: 40px;
+}
+
+.anchor {
+  display: block;
+  height: 70px;
+  margin-top: -70px;
+  visibility: hidden;
+}
+
+.main-anchor {
+  display: block;
+  height: 70px;
+}
+
+.list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;  
+}
+
+.list li a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 40px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  z-index: 9999;
+}
+
+.list li a:hover {
+  background-color: #dedede;
+}
+
+.imgHome {
+  border-radius: 50%;
+  object-fit: cover;
+  height: auto;
+  width: 70%;
+}
+
+.imgProj {
+  border-radius: 50%;
+  object-fit: cover;
+  max-height: 300px;
+  max-width: 300px;
+  margin-left: 50px;
+}
+
+.imgBorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 50px;
+}
+
+footer {
+  border-top: 1px solid gray;
+  text-align: center;
+  font-size: .9em;
+  margin-top: auto;
+  padding-top: 4.5px;
+}
+
+.homeHeader {
+  top: 0;
+  background-color: #f0f0f0;
+  text-align: left;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+}
+
+.h1Home {
+  font-size: 40px;
+  padding-bottom: .67em;
+  border-bottom: 0.5px solid;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.wrapper {
+  margin: auto;
+  padding: 40px;
+  display: block;
+  padding-left: 110px;
+}
+
+.intro {
+  color: black;
+  font-size: 25px;
+  margin-top: -30px;
+  font-weight: 300;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.pagesBox {
+  top: 0;
+  width: 100%;
+  display: block;
+  padding: 30px;
+  margin-bottom: 50px;
+  position: fixed;
+  background-size: 0%;
+  background-color: #f0f0f0;
+  box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.pages {
+  border-radius: 28px;
+  border: 1px solid black;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  padding: 12px 25px;
+  text-decoration: none;
+  margin: 1.5em auto;
+  margin-right: 10px;
+  width: 100%;
+  box-shadow: 3px 5px 0 rgba(0,0,0,0.10);
+}
+
+.pages:hover {
+  background-color: white;
+}
+
+.project-button {
+  border-radius: 28px;
+  border: 1px solid rgb(204, 204, 204);
+  cursor: pointer;
+  color: black;
+  background-color: #f4f4f4;
+  padding: 6px 12px;
+  text-decoration: none;
+  margin: 1.5em auto;
+  cursor: default;
+}
+
+.clickButton {
+  border-radius: 28px;
+  border: 1px solid black;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  padding: 12px 25px;
+  text-decoration: none;
+  margin: 1.5em auto;
+  box-shadow: 3px 5px 0 rgba(0,0,0,0.10);
+}
+
+.clickButton:hover {
+  background-color: white;
+}
+
+.clickButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.blurb {
+  box-shadow: 0 0px 1px 0 rgb(0 0 0 / 40%);
+  width: 100%;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
   section {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 75px;
+    padding-right: 75px;
     padding-top: 10px;
     padding-bottom: 20px;
     position: relative;
   }
-  
-  .home {
-    padding-top: 40px;
-  }
-  
-  .anchor {
-    display: block;
-    height: 84px;
-    margin-top: -84px;
-    visibility: hidden;
-  }
-  
-  .main-anchor {
-    display: block;
-    height: 84px;
-  }
-  
-  .list ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #f0f0f0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .list li a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 18px 40px;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .list li a:hover {
-    background-color: #dedede;
-  }
-  
-  /*img {*/
-  /*  border-radius: 50%;*/
-  /*  object-fit: cover;*/
-  /*  height: 350px;*/
-  /*  width: 350px;*/
-  /*}*/
-  
-  .imgHome {
-    border-radius: 50%;
-    object-fit: cover;
-    height: auto;
-    width: 70%;
-  }
-  
-  .imgProj {
-    border-radius: 50%;
-    object-fit: cover;
-    max-height: 300px;
-    max-width: 300px;
-    margin-left: 50px;
+
+  .about-me {
+    padding-right: 30px;
   }
 
-  .imgBorder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .projects,
+  .homeSkills,
+  .homeProjects {
+    grid-template-columns: 1fr; /* Stacked layout */
+    gap: 20px; /* Add space between items in the grid */
+  }
+
+  .orgs {
+    grid-template-columns: 1fr; /* Stack items in orgs section */
+    margin-top: 20px;
+  }
+
+  .personalProjects {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .list li a {
+    padding: 12px 20px;
+    font-size: 20px;
+  }
+
+  .wrapper {
+    padding-left: 50px; /* Adjust padding for smaller screens */
+    padding-right: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .imgHome {
+    width: 90%;
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it's a block element */
+  }
+
+  /* Add extra spacing for small screens */
+  .pagesBox {
+    padding: 20px; /* Add space inside the navigation box */
+    margin-bottom: 20px; /* Add bottom margin to prevent overlap */
+  }
+
+  .pages {
+    padding: 10px 20px; /* Adjust padding to make buttons less wide */
+    font-size: 14px; /* Smaller text for mobile */
+    margin-bottom: 10px; /* Add space between buttons */
+    width: auto; /* Let the button size adjust based on content */
+  }
+
+  .projects-content {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* If images are too wide, set a max width */
+  .imgOrg {
+    max-width: 90%; /* Prevent images from being too wide */
+    margin: 0 auto; /* Center images */
+  }
+
+  /* Ensure the carousel fits within the screen width */
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust text blocks so they're not too wide */
+  .intro {
+    font-size: 16px; /* Make text smaller */
+    padding: 10px;
+  }
+
+  /* Adjust the footer to have some breathing space */
+  footer {
+    padding: 15px;
+  }
+
+  .orgs-pic img:nth-child(1) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    transform: translateX(10%) translateY(-5%);
+  }
+  
+  .orgs-pic img:nth-child(2) {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    transform: translateX(-10%) translateY(78%);
+  }
+  
+  .orgs-pic img:nth-child(3) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    transform: translateX(-8%) translateY(0%);
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding-left: 50px;
     padding-right: 50px;
   }
-  
-  
-  footer {
-    border-top: 1px solid gray;
+
+  .h1Home {
     text-align: center;
-    font-size: .9em;
-    margin-top: auto;
-    padding-top: 4.5px;
-    /* background-color: #f0f0f0; */
   }
-  
-  
-  /* header stuff */
-  
+
   .homeHeader {
     top: 0;
     background-color: #f0f0f0;
     text-align: left;
     color: black;
     min-height: 100vh;
-    display: flex;
-    width: 100%;
-  }
-  
-  .h1Home {
-    font-size: calc(0.5em + 2vw);
-    padding-bottom: .67em;
-    border-bottom: 1px solid;
-    line-height: 1.3;
-  }
-  
-  .wrapper {
-    margin: auto;
-    padding: 40px;
     display: block;
-    padding-left: 110px;
-  }
-  
-  .intro {
-    color: black;
-    font-size: 18px;
-  }
-  
-  .buttonBox {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  
-  .pagesBox {
-    top: 0;
     width: 100%;
-    display: block;
-    /*padding-top: 30px;*/
-    /*padding-left: 30px;*/
-    padding: 30px;
-    margin-bottom: 50px;
-    position: fixed;
-    background-size: 0%;
-    background-color: #f0f0f0;
-    box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-  }
-  .pages {
-    border-radius: 28px;
-    border: 1px solid black;
-    cursor: pointer;
-    color: black;
-    font-size: 16px;
-    padding: 12px 25px;
-    text-decoration: none;
-    margin: 1.5em auto;
-    margin-right: 10px;
-    width: 100%;
-    box-shadow: 3px 5px 0 rgba(0,0,0,0.10);
-  }
-  
-  .pages:hover {
-    background-color: white;
+    padding-top: 30px;
   }
 
-  .project-button {
-    border-radius: 28px;
-    border: 1px solid rgb(204, 204, 204);
-    cursor: pointer;
-    color: black;
-    background-color: #f4f4f4;
-    /* font-size: 16px; */
-    padding: 6px 12px;
-    text-decoration: none;
-    margin: 1.5em auto;
-    cursor: default;
+  .intro {
+    text-align: center;
   }
-  
-  .clickButton {
-    border-radius: 28px;
-    border: 1px solid black;
-    cursor: pointer;
-    color: black;
-    font-size: 16px;
-    padding: 12px 25px;
-    text-decoration: none;
-    margin: 1.5em auto;
-    box-shadow: 3px 5px 0 rgba(0,0,0,0.10);
+
+  .wrapper {
+    padding-left: 50px; /* Adjust padding for smaller screens */
+    padding-right: 50px; /* Adjust padding for smaller screens */
   }
-  
-  .clickButton:hover {
-    background-color: white;
+
+  .imgHome {
+    width: 75%;
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it's a block element */
   }
-  
-  .clickButton:active {
-    position: relative;
-    top: 1px;
+
+  .imgBorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0px;
   }
-  
-  .blurb {
-    box-shadow: 0 0px 1px 0 rgb(0 0 0 / 40%);
+
+  /* .hamburger {
+    display: flex;
+  }
+
+  .list {
+    display: flex;
+  }
+
+  /* Mobile menu styles */
+  /* .list ul {
+    display: none;  
+    top: 60px;  
     width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    position: relative;
+    z-index: 800;
   }
+
+
+  .list ul.active {
+    display: block;  
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .list ul.hover {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    background-color: #dedede;
+  }
+
+  .list li a {
+    text-align: center;
+    margin: 10px 0;
+    padding: 12px;
+  }
+
+  .list a {
+    font-size: 18px;
+    display: block;
+  } */
+}
+
+/* Header Styles */
+.list-header {
+  background-color: #f0f0f0;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 1.5px 7.5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;  
+  left: 0;
+}
+
+/* Hide the menu by default on mobile */
+/* .list ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list ul.active {
+  display: block;
+} */
+
+/* Ensure the hamburger icon is only visible on mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  padding: 14px;
+  margin: 7.5px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 1000px) {
+  .hamburger {
+    display: flex;
+    /* position: relative; */
+  }
+
+  .list {
+    display: flex;
+    /* position: relative; */
+  }
+
+  /* Mobile menu styles */
+  .list ul {
+    display: none;  /* Initially hidden */
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 5px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    z-index: 800;
+  }
+
+  .list ul.active {
+    display: flex;  
+    flex-direction: column;
+    margin-top: 70px;
+    max-width: 130px;
+  }
+
+  .list ul.hover {
+    display: block;
+    cursor: pointer;
+    background-color: #dedede;
+  }
+
+  .list li a {
+    text-align: center;
+    margin: 5px 0;
+    padding: 10px;
+    display: block;
+    width: 130px;
+  }
+
+  .list li a:hover {
+    background-color: #dedede;
+    border: 1px solid black;
+  }
+
+  .list a {
+    font-size: 18px;
+    display: block;
+  }
+}
+
+

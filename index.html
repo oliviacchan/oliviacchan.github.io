@@ -3,6 +3,7 @@
 <head id="head.html">
   <meta charset="utf-8">
   <meta name="description" content="A portfolio website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olivia Chan - Personal Portfolio</title>
   <link  href="css/styles.css"rel="stylesheet" type="text/css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
@@ -15,14 +16,14 @@
   });
 </script> 
 <body class="front">
+  <header id="header" class="list"></header>
   <header class="homeHeader">
     <span class="anchor" id="home"></span>  
-    <header id="header" class="list"></header>
     <div class="wrapper">
-      <h1 id="home" class="h1Home">Hi, I'm Olivia Chan!</h1>
+      <p id="home" class="h1Home">Hi, I'm Olivia Chan!</p>
       <p class="intro">Welcome to my website, excited to get connected with you! &#128075;</p>
       <div class="buttonBox">
-          <a class="clickButton" href="#about-me">Go</a>
+          <!-- <a class="clickButton" href="#about-me">Go</a> -->
       </div>
     </div>
     <div class="imgBorder">
@@ -32,9 +33,9 @@
   <span class="anchor" id="about-me"></span>
   <section class="main" style="padding-top: 30px;">
     <div class="orgs">
-      <div style="padding-right: 100px;">
+      <div class="about-me">
         <h1>About Me</h1>
-        <p>Hi! My name is <strong>Olivia Chan</strong>, and I am a <strong>senior</strong> at Virginia Tech, pursing an Accelerated Masters of Engineering. I am currently majoring in <stron g>Computer Science</strong> with minors in <strong>Human Computer Interaction & Mathematics</strong>. My current interests revolve around full stack development, UI/UX, and understanding the importance between technology and a user. I think that as technology is developing, it is important that the interfaces and interactions that we have with them stay modernized because we want to be able to utilize the up and coming technology. </p>
+        <p>Hi! My name is <strong>Olivia Chan</strong>, and I am a <strong>senior</strong> at Virginia Tech, pursing an Accelerated Masters of Engineering. I am currently majoring in <strong>Computer Science</strong> with minors in <strong>Human Computer Interaction & Mathematics</strong>. My current interests revolve around full stack development, UI/UX, and understanding the importance between technology and a user. I think that as technology is developing, it is important that the interfaces and interactions that we have with them stay modernized because we want to be able to utilize the up and coming technology. </p>
         <p>At Virginia Tech, I am a part of:</p>
         <div>
           <ul>
@@ -67,17 +68,22 @@
           pertains to engineering and to the university as a whole.</p>
       </div>
       <div>
-        <div class="orgs-pic">
+        <!-- <div class="orgs-pic">
           <img class="imgOrg" src="pics/dean_team.JPG" style="margin-bottom: -70px;"alt="deans-team"/>
           <p></p>
           <p></p>
           <img class="imgOrg" src="pics/jump rope.JPG" style="margin-left: -30px; margin-top: 45px; margin-bottom: -60px;" alt="jump-rope"/>
           <img class="imgOrg" src="pics/vthacks.JPG" style="margin-left: -50px; margin-top: -70px;" alt="vthacks"/>
-        </div>
+        </div> -->
+        <div class="orgs-pic">
+          <img class="imgOrg" src="pics/dean_team.JPG" alt="deans-team" />
+          <img class="imgOrg" src="pics/jump rope.JPG" alt="jump-rope" />
+          <img class="imgOrg" src="pics/vthacks.JPG" alt="vthacks" />
+        </div>        
       </div>
       </div>
   </section>
-  <span class="anchor" id="prof-work"></span>
+  <span class="anchor" id="course-&-skills"></span>
   <section class="main">
       <h1>Courses & Skills</h1>
       <div>

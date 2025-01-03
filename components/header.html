@@ -1,13 +1,46 @@
 <!DOCTYPE HTML>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <div class="pagesBox">
-        <a class="pages" href="/#home">Home</a>
-        <a class="pages" href="/#about-me">About Me</a>
-        <a class="pages" href="/#prof-work">Courses & Skills</a>
-        <a class="pages" href="projects.html">Projects</a>
-        <a class="pages" href="../resume/resume.pdf" target="_blank" title="Read PDF">Resume</a>
-        <a class="pages" href="/#contact">Contact</a>
+
+<header class="list-header">
+    <!-- Hamburger Icon (visible only on mobile) -->
+    <div class="header-container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </div>
+
+    <!-- Navigation Menu -->
+    <nav class="list">
+        <ul>
+            <li><a href="/#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="/#about-me" onclick="toggleMenu()">About Me</a></li>
+            <li><a href="/#course-&-skills" onclick="toggleMenu()">Courses & Skills</a></li>
+            <li><a href="../projects.html" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="../resume/resume.pdf" target="_blank" title="Read PDF" onclick="toggleMenu()">Resume</a></li>
+            <li><a href="/#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    // Toggle menu visibility on mobile
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.list ul');
+
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+    menu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

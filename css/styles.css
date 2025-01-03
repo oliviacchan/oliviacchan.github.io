@@ -2,8 +2,6 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-left: 25px;
-  padding-right: 40px;
 }
 
 .homeSkills {
@@ -74,7 +72,8 @@
 
 /* Mobile adjustments - Stack the images vertically */
 .personalProjects {
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% auto;
   padding-left: 60px;
   padding-bottom: 30px;
   padding-right: 50px;
@@ -86,11 +85,11 @@
 }
 
 .carousel {
-  display: flex;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: 15px;
 }
 
 .carousel-button {
@@ -99,10 +98,10 @@
   color: white;
   padding: 10px;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   border-radius: 25%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 
 .carousel-button:hover {
@@ -118,10 +117,12 @@
 }
 
 .carousel-image {
-  max-width: 32vw;
-  max-height: 100vh;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-carousel-image {
@@ -173,6 +174,11 @@ section {
   height: 70px;
 }
 
+.proj-anchor {
+  display: block;
+  height: 60px;
+}
+
 .list ul {
   list-style-type: none;
   margin: 0;
@@ -215,7 +221,15 @@ section {
   object-fit: cover;
   max-height: 300px;
   max-width: 300px;
-  margin-left: 50px;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.personal-proj {
+  padding-left: 75px;
 }
 
 .imgBorder {
@@ -310,7 +324,7 @@ footer {
   background-color: #f4f4f4;
   padding: 6px 12px;
   text-decoration: none;
-  margin: 1.5em auto;
+  margin: 2px;
   cursor: default;
 }
 
@@ -354,9 +368,7 @@ footer {
     padding-right: 30px;
   }
 
-  .projects,
-  .homeSkills,
-  .homeProjects {
+  .homeSkills {
     grid-template-columns: 1fr; /* Stacked layout */
     gap: 20px; /* Add space between items in the grid */
   }
@@ -411,12 +423,6 @@ footer {
   .imgOrg {
     max-width: 90%; /* Prevent images from being too wide */
     margin: 0 auto; /* Center images */
-  }
-
-  /* Ensure the carousel fits within the screen width */
-  .carousel-image {
-    max-width: 100%;
-    height: auto;
   }
 
   /* Adjust text blocks so they're not too wide */
@@ -611,6 +617,28 @@ footer {
   .list a {
     font-size: 18px;
     display: block;
+  }
+
+  .projects,
+  .homeProjects,
+  .personalProjects {
+    grid-template-columns: 1fr; /* Stacked layout */
+    gap: 20px; /* Add space between items in the grid */
+  }
+
+  .orgs {
+    grid-template-columns: 1fr; /* Stack items in orgs section */
+    margin-top: 20px;
+  }
+
+  .projects-content {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .personal-proj {
+    padding-left: 0px;
   }
 }
 

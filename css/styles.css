@@ -596,6 +596,34 @@ footer p {
 
 /* Media query for mobile devices */
 @media (max-width: 1000px) {
+  .projects,
+  .homeProjects,
+  .personalProjects {
+    grid-template-columns: 1fr; /* Stacked layout */
+    gap: 20px; /* Add space between items in the grid */
+  }
+
+  .orgs {
+    grid-template-columns: 1fr; /* Stack items in orgs section */
+    margin-top: 20px;
+  }
+
+  .projects-content {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .personal-proj {
+    padding-left: 0px;
+  }
+
+  .home-carousel-image {
+    max-width: 100%;
+  }  
+}
+
+@media (max-width: 825px) {
   .hamburger {
     display: flex;
     /* position: relative; */
@@ -649,32 +677,4 @@ footer p {
     font-size: 18px;
     display: block;
   }
-
-  .projects,
-  .homeProjects,
-  .personalProjects {
-    grid-template-columns: 1fr; /* Stacked layout */
-    gap: 20px; /* Add space between items in the grid */
-  }
-
-  .orgs {
-    grid-template-columns: 1fr; /* Stack items in orgs section */
-    margin-top: 20px;
-  }
-
-  .projects-content {
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .personal-proj {
-    padding-left: 0px;
-  }
-
-  .home-carousel-image {
-    max-width: 100%;
-  }  
 }
-
-

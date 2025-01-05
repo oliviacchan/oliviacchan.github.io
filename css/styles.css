@@ -79,7 +79,7 @@
 
 .projects-content {
   padding: 10px;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .carousel {
@@ -151,8 +151,8 @@ body {
 section {
   padding-left: 100px;
   padding-right: 100px;
-  padding-top: 10px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -174,7 +174,7 @@ section {
 
 .proj-anchor {
   display: block;
-  height: 60px;
+  height: 40px;
 }
 
 .list ul {
@@ -244,6 +244,7 @@ footer {
   border-top: 1px solid gray;
   text-align: center;
   padding: 15px 100px;
+  margin-top: 30px;
 }
 
 footer p { 
@@ -422,12 +423,6 @@ footer p {
     font-size: 14px; /* Smaller text for mobile */
     margin-bottom: 10px; /* Add space between buttons */
     width: auto; /* Let the button size adjust based on content */
-  }
-
-  .projects-content {
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 
   /* If images are too wide, set a max width */

@@ -1,4 +1,3 @@
-/* Default layout styles for larger screens */
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -20,7 +19,7 @@
 
 .orgs {
   display: grid;
-  grid-template-columns: 50vw auto; /* Side by side on desktop */
+  grid-template-columns: 50vw auto;
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
@@ -28,10 +27,9 @@
   margin-right: -25px;
 }
 
-/* Basic grid layout for images in .orgs-pic */
 .orgs-pic {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  grid-template-columns: repeat(2, 1fr); 
   grid-gap: 20px;
   align-items: center;
   justify-items: center;
@@ -40,17 +38,15 @@
   margin-right: auto;
 }
 
-/* Ensure images are responsive */
 .imgOrg {
   border-radius: 30%;
   object-fit: cover;
   width: 100%;
-  max-width: 300px; /* Ensure images don't get too large */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Smooth transition for interaction */
+  max-width: 300px; 
+  height: auto; 
+  transition: transform 0.3s ease;
 }
 
-/* Staggered effect for images on larger screens */
 .orgs-pic img:nth-child(1) {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
@@ -69,7 +65,6 @@
   transform: translateX(-12%) translateY(0%);
 }
 
-/* Mobile adjustments - Stack the images vertically */
 .personalProjects {
   display: grid;
   grid-template-columns: 30% auto;
@@ -96,10 +91,8 @@
   color: white;
   padding: 10px;
   cursor: pointer;
-  /* position: absolute; */
   top: 50%;
   border-radius: 25%;
-  /* transform: translateY(-50%); */
 }
 
 .carousel-button:hover {
@@ -369,175 +362,6 @@ footer p {
   width: 100%;
 }
 
-/* MOBILE STYLES */
-@media (max-width: 768px) {
-  section {
-    padding-left: 75px;
-    padding-right: 75px;
-  }
-
-  .about-me {
-    padding-right: 30px;
-  }
-
-  .homeSkills {
-    grid-template-columns: 1fr; /* Stacked layout */
-    gap: 20px; /* Add space between items in the grid */
-  }
-
-  .orgs {
-    grid-template-columns: 1fr; /* Stack items in orgs section */
-    margin-top: 20px;
-  }
-
-  .personalProjects {
-    flex-direction: column;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .list li a {
-    padding: 12px 20px;
-    font-size: 20px;
-  }
-
-  .wrapper {
-    padding-left: 50px; /* Adjust padding for smaller screens */
-    padding-right: 20px; /* Adjust padding for smaller screens */
-  }
-
-  .imgHome {
-    width: 90%;
-    margin: 0 auto; /* Center the image */
-    display: block; /* Ensure it's a block element */
-  }
-
-  /* Add extra spacing for small screens */
-  .pagesBox {
-    padding: 20px; /* Add space inside the navigation box */
-    margin-bottom: 20px; /* Add bottom margin to prevent overlap */
-  }
-
-  .pages {
-    padding: 10px 20px; /* Adjust padding to make buttons less wide */
-    font-size: 14px; /* Smaller text for mobile */
-    margin-bottom: 10px; /* Add space between buttons */
-    width: auto; /* Let the button size adjust based on content */
-  }
-
-  /* If images are too wide, set a max width */
-  .imgOrg {
-    max-width: 90%; /* Prevent images from being too wide */
-    margin: 0 auto; /* Center images */
-  }
-
-  /* Adjust text blocks so they're not too wide */
-  .intro {
-    font-size: 16px; /* Make text smaller */
-    padding: 10px;
-  }
-
-  /* Adjust the footer to have some breathing space */
-  footer {
-    padding: 15px;
-  }
-
-  .orgs-pic img:nth-child(1) {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    transform: translateX(10%) translateY(-5%);
-  }
-  
-  .orgs-pic img:nth-child(2) {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    transform: translateX(-10%) translateY(78%);
-  }
-  
-  .orgs-pic img:nth-child(3) {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-    transform: translateX(-8%) translateY(0%);
-  }
-}
-
-@media (max-width: 600px) {
-  section {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .h1Home {
-    text-align: center;
-  }
-
-  .homeHeader {
-    top: 0;
-    background-color: #f0f0f0;
-    text-align: left;
-    color: black;
-    min-height: 100vh;
-    display: block;
-    width: 100%;
-    padding-top: 20px;
-  }
-
-  .intro {
-    text-align: center;
-  }
-
-  .wrapper {
-    padding-bottom: 20px;
-    padding-left: 50px; /* Adjust padding for smaller screens */
-    padding-right: 50px; /* Adjust padding for smaller screens */
-  }
-
-  .imgHome {
-    width: 75%;
-    margin: 0 auto; /* Center the image */
-    display: block; /* Ensure it's a block element */
-  }
-
-  .imgBorder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0px;
-  }
-
-  .orgs-pic {
-    grid-template-columns: 1fr; 
-    gap: 20px;
-    margin-top: 10px;
-  }
-
-  .imgOrg {
-    max-width: 70%;
-  }
-
-  .orgs-pic img:nth-child(1) {
-    grid-row: 1;
-    grid-column: 1;
-    /* transform: translateX(0) translateY(0); */
-    transform: translateX(-15%) translateY(5%);
-  }
-  
-  .orgs-pic img:nth-child(2) {
-    grid-row: 2;
-    grid-column: 1;
-    /* transform: translateX(0) translateY(0); */
-    transform: translateX(10%) translateY(0);
-  }
-  
-  .orgs-pic img:nth-child(3) {
-    grid-row: 3;
-    grid-column: 1;
-    /* transform: translateX(0) translateY(0); */
-    transform: translateX(-15%) translateY(-5%);
-  }
-}
-
-/* Header Styles */
 .list-header {
   background-color: #f0f0f0;
   padding: 15px;
@@ -566,7 +390,6 @@ footer p {
   background-color: #dedede;
 }
 
-/* Ensure the hamburger icon is only visible on mobile */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -589,17 +412,16 @@ footer p {
   background-color: black;
 }
 
-/* Media query for mobile devices */
 @media (max-width: 1000px) {
   .projects,
   .homeProjects,
   .personalProjects {
-    grid-template-columns: 1fr; /* Stacked layout */
-    gap: 20px; /* Add space between items in the grid */
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .orgs {
-    grid-template-columns: 1fr; /* Stack items in orgs section */
+    grid-template-columns: 1fr;
     margin-top: 20px;
   }
 
@@ -621,17 +443,14 @@ footer p {
 @media (max-width: 825px) {
   .hamburger {
     display: flex;
-    /* position: relative; */
   }
 
   .list {
     display: flex;
-    /* position: relative; */
   }
 
-  /* Mobile menu styles */
   .list ul {
-    display: none;  /* Initially hidden */
+    display: none; 
     background-color: #f0f0f0;
     padding: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
@@ -671,5 +490,169 @@ footer p {
   .list a {
     font-size: 18px;
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  .about-me {
+    padding-right: 30px;
+  }
+
+  .homeSkills {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .orgs {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .personalProjects {
+    flex-direction: column;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .list li a {
+    padding: 12px 20px;
+    font-size: 20px;
+  }
+
+  .wrapper {
+    padding-left: 50px;
+    padding-right: 20px; 
+  }
+
+  .imgHome {
+    width: 90%;
+    margin: 0 auto;
+    display: block; 
+  }
+
+  .pagesBox {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .pages {
+    padding: 10px 20px; 
+    font-size: 14px; 
+    margin-bottom: 10px; 
+    width: auto; 
+  }
+
+  .imgOrg {
+    max-width: 90%;
+    margin: 0 auto; 
+  }
+
+  .intro {
+    font-size: 16px; 
+    padding: 10px;
+  }
+
+  footer {
+    padding: 15px 75px;
+  }
+
+  .orgs-pic img:nth-child(1) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    transform: translateX(10%) translateY(-5%);
+  }
+  
+  .orgs-pic img:nth-child(2) {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    transform: translateX(-10%) translateY(78%);
+  }
+  
+  .orgs-pic img:nth-child(3) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    transform: translateX(-8%) translateY(0%);
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  footer {
+    padding: 15px 25px;
+  }
+
+  .h1Home {
+    text-align: center;
+  }
+
+  .homeHeader {
+    top: 0;
+    background-color: #f0f0f0;
+    text-align: left;
+    color: black;
+    min-height: 100vh;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .wrapper {
+    padding-bottom: 20px;
+    padding-left: 50px; 
+    padding-right: 50px; 
+  }
+
+  .imgHome {
+    width: 75%;
+    margin: 0 auto; 
+    display: block;
+  }
+
+  .imgBorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0px;
+  }
+
+  .orgs-pic {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .imgOrg {
+    max-width: 70%;
+  }
+
+  .orgs-pic img:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+    transform: translateX(-15%) translateY(5%);
+  }
+  
+  .orgs-pic img:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+    transform: translateX(10%) translateY(0);
+  }
+  
+  .orgs-pic img:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+    transform: translateX(-15%) translateY(-5%);
   }
 }

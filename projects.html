@@ -40,6 +40,43 @@
         currentIndexDB = (currentIndexDB - 1 + imagesDB.length) % imagesDB.length;
         document.getElementById("db-carousel-image").src = imagesDB[currentIndexDB];
     }
+
+    function proj1() {
+        var proj = document.getElementById("proj1");
+        var button = document.getElementById("accButt");
+        
+        if (proj.style.maxHeight && proj.style.maxHeight !== "0px") {
+            setTimeout(function() {
+                proj.style.display = "none";
+            }, 500);
+            proj.style.maxHeight = "0px";
+            button.textContent = "Read more";
+        } else {
+            proj.style.display = "block";
+            setTimeout(function() {
+                proj.style.maxHeight = proj.scrollHeight + "px";
+            }, 10);
+            button.textContent = "See less";
+        }
+    }
+
+    function proj2() {
+        var proj = document.getElementById("proj2");
+        if(proj.style.maxHeight && proj.style.maxHeight !== "0px") {
+            setTimeout(function() {
+                proj.style.display = "none";
+            }, 500);
+            proj.style.maxHeight = "0px";
+            document.getElementById("accButt2").textContent = "Read more"
+        }
+        else {
+            proj.style.display = "block";
+            setTimeout(function() {
+                proj.style.maxHeight = proj.scrollHeight + "px";
+            }, 10);
+            document.getElementById("accButt2").textContent = "See less"
+        } 
+    }
 </script> 
 <body>
   <header id="header" class="list"></header>
@@ -67,10 +104,21 @@
                 <h3>Beyond the Books - Online Bookstore</h3>
                 <p style="margin-top: -12px">CS 5244: Web Application Development</p>
                 <p style="margin-top: -12px"><em>Aug 2024 - Dec 2024</em></p>
-                <uL>
-                    <li>Developed a data-centric online bookstore that includes session handling, database management, and user history.</li>
-                    <li>Use REST APIs and the data access object (DAO) pattern to create dynamically-generated web content</li>
-                </uL>
+                <div>
+                    A data-centric online bookstore that includes session handling, database management, and user history, designed with reusability, scalabilty, and consistency in mind.
+                </div>
+                <div class="panel" id="proj1">
+                    <p>
+                        The use of React with TypeScript was the foundation for the majority of the project. Utilizing different components for various sections and pages of the application allowed for reusability and consistency throughout the project. For example, the books were displayed by different categories, but the display of books remained consistent for each category.
+                        <br>
+                        <br>
+                        REST APIs and the Data Access Object (DAO) pattern were used to create dynamically-generated web content. This was especially crucial when generating the cart and checkout pages. Using a universal cart and bookstore list, it remained consistently accessible to all the subpages in the DOM tree. The cart kept track of each book and its corresponding information, as well as the quantity of each book. Once the user decided to check out, they would enter valid information before proceeding. If the information was invalid, it would output an error message on the interface to indicate the specific error to the user. There was also additional validation on the backend to ensure that if information got changed when sending the order detail to the backend, it would catch the errors there as well.
+                        <br>
+                        <br>
+                        Overall, this application allowed for dynamically-generated content while also considering design principles of reusability, consistency, scalability, and more. This project was a great experience as I was able to get hands-on practice with a full stack project, implementing everything from the front-end to the back-end of the project.
+                    </p>
+                </div>
+                <button class="accordion" onclick="proj1()" id="accButt">Read more</button>
                 <div>
                     <button class="project-button">HTML</button>
                     <button class="project-button">CSS</button>
@@ -103,10 +151,21 @@
                 <h3>BlossomDB</h3>
                 <p style="margin-top: -12px">CS 4604: Introduction to Database Management Systems</p>
                 <p style="margin-top: -12px"><em>Aug 2024 - Dec 2024</em></p>
-                <ul>
-                    <li>Implemented a UI which allowed a user to perform create, read, update, and delete requests to the SQL database.</li>
-                    <li>Limited access to different UI components and database requests depending on the users role</li>
-                </ul>
+                <div>
+                    Implemented a UI which allowed a user to perform create, read, update, and delete requests to the SQL database, limiting access to different tables and database requests depending on the users role.
+                </div>
+                <div class="panel" id="proj2">
+                    <p>
+                        The project focused on creating a database structure that worked best with the flow and implementation of the tables. My group and I implemented a relational database, normalizing all the tables to allow for easy create, read, update, and delete operations.
+                        <br>
+                        <br>
+                        To achieve this, we used Express.js and Node.js to connect to the MySQL database. By utilizing SQL statements, we were able to make requests to the database. Since the database was dynamically generated using Axios calls on the front-end, once the backend request was valid, users could see the changes in the database reflected in the UI. For user login restrictions, we used content-type headers to keep track of user permissions based on their roles. When each user accessed a subtable, it used that information to display only the CRUD operations they were allowed to perform.
+                        <br>
+                        <br>
+                        Overall, this project focused on creating a database that would allow for easy readability as well as integration into a UI. I enjoyed learning how to perform CRUD operations on the database and using Axios to make the API calls.
+                    </p>
+                </div>
+                <button class="accordion" onclick="proj2()" id="accButt2">Read more</button>
                 <div>
                     <button class="project-button">React</button>
                     <button class="project-button">JavaScript</button>
@@ -125,8 +184,10 @@
                 <h4>This website!</h4>
                 <p>
                     I have worked on making my personal portfolio from scratch using the knowledge I have obtained
-                    from classes I have taken and experiences I have had. I am still working on updating my website
-                    with my projects, but for now, feel free to take a look at what I have so far! Before you head
+                    from classes I have taken and experiences I have had. Through doing this project, I have learned 
+                    a lot more about the fundamentals of web development such as different CSS properties, screen resizing, 
+                    and implementing JS intro basic HTML files. As I am still working on updating my website with my projects, 
+                    feel free to take a look at what I have so far! Before you head
                     out, let me tell you a little about me. I am currently a senior at Virginia Tech majoring in
                     Computer Science with minors in Human Computer Interaction & Mathematics. I enjoy hiking,
                     biking, and all things outdoors, you name it and I am there! I always love trying new things and

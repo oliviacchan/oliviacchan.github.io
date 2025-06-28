@@ -3,12 +3,6 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* .projects {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-} */
-
 .homeSkills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -116,7 +110,6 @@
 .carousel-image {
   max-width: 100%;
   object-fit: cover;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +119,6 @@
   max-width: 95%;
   max-height: 100%;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 html {

@@ -17,9 +17,11 @@
 
     const imagesWeb = ["web-project/home.png", "web-project/category.png", "web-project/cart.png", "web-project/checkout.png"];
     const imagesDB = ["db-project/login.png", "db-project/dashboard.png", "db-project/employee.png", "db-project/customer.png", "db-project/new.png", "db-project/list.png", "db-project/update.png"];
+    const imagesHCI = ["hci-capstone/garden.png", "hci-capstone/tasks.png", "hci-capstone/recipes.png", "hci-capstone/memory.png"];
 
     let currentIndexWeb = 0;
     let currentIndexDB = 0;
+    let currentIndexHCI = 0;
 
     function nextImageWeb() {
         currentIndexWeb = (currentIndexWeb + 1) % imagesWeb.length;
@@ -39,6 +41,16 @@
     function prevImageDB() {
         currentIndexDB = (currentIndexDB - 1 + imagesDB.length) % imagesDB.length;
         document.getElementById("db-carousel-image").src = imagesDB[currentIndexDB];
+    }
+    
+    function nextImageHCI() {
+        currentIndexHCI = (currentIndexHCI + 1) % imagesHCI.length;
+        document.getElementById("hci-capstone-image").src = imagesHCI[currentIndexHCI];
+    }
+
+    function prevImageHCI() {
+        currentIndexHCI = (currentIndexHCI - 1 + imagesHCI.length) % imagesHCI.length;
+        document.getElementById("hci-capstone-image").src = imagesHCI[currentIndexHCI];
     }
 
     function proj1() {
@@ -77,12 +89,76 @@
             document.getElementById("accButt2").textContent = "See less"
         } 
     }
+
+    function proj3() {
+        var proj = document.getElementById("proj3");
+        if(proj.style.maxHeight && proj.style.maxHeight !== "0px") {
+            setTimeout(function() {
+                proj.style.display = "none";
+            }, 500);
+            proj.style.maxHeight = "0px";
+            document.getElementById("accButt3").textContent = "Read more"
+        }
+        else {
+            proj.style.display = "block";
+            setTimeout(function() {
+                proj.style.maxHeight = proj.scrollHeight + "px";
+            }, 10);
+            document.getElementById("accButt3").textContent = "See less"
+        } 
+    }
 </script> 
 <body>
   <header id="header" class="list"></header>
   <span class="proj-anchor"></span>
     <section>
         <h1>School Projects</h1>
+        <p style="margin-top: 30px;"></p>
+        <div class="projects">
+            <div class="carousel">
+                <div style="justify-self: end; padding-right: 5px;">
+                    <button class="carousel-button" onclick="prevImageHCI()">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div>
+                    <img id="hci-capstone-image" src="hci-capstone/garden.png" class="carousel-image">
+                </div>
+                <div style="padding-left: 5px;">
+                    <button class="carousel-button" onclick="nextImageHCI()">
+                        <i class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="projects-content">
+                <h3>Bun Appétit</h3>
+                <p style="margin-top: -12px">CS 4784: Human-Computer Interaction Capstone</p>
+                <p style="margin-top: -12px"><em>Jan 2025 - May 2025</em></p>
+                <div>
+                    Bun Appétit is a mobile app designed to transform everyday cooking into a collaborative, gamified experience for distant family members.
+                </div>
+                <div class="panel" id="proj3">
+                    <p>
+                        By centering on joint recipe completion and playful documentation of food preparation, the app encourages participation in an emotionally rich, shared routine. A virtual kinkeeper, Nibbles the bunny, supports engagement through a friendly presence that adds warmth and continuity to the experience. We hypothesized that Bun Appétit would deepen communication quality, stimulate shared memories, and enhance emotional closeness by making connection feel natural, fun, and purpose-driven.
+                        <br>
+                        <br>
+                        The core modules that make up the Bun Appétit gameplay experience contribute to fostering connection between distant family members. We describe the Garden, which features Nibbles the virtual pet as a persistent emotional companion; the Tasks module, which guides users through collaborative steps; the Recipe Book, which visualizes progress and shared goals; and the Memory Collage, where families reflect on their joint accomplishments. Together, these modules integrate playful interaction, symbolic presence, and asynchronous participation to support emotionally meaningful engagement, with the backend architecture (built on Django) providing the foundation for real-time data synchronization, media handling, and task verification across the system.
+                        <br>
+                        <br>
+                        Overall, by designing and evaluating Bun Appétit, my group and I investigated how task-oriented design, asynchronous interaction, and the presence of a virtual companion can help reduce communication barriers and foster emotional connection among family members living apart. This project helped me learn more about SQL and API call, providing me more exposure to backend development.
+                    </p>
+                </div>
+                <button class="accordion" onclick="proj3()" id="accButt">Read more</button>
+                <div>
+                    <button class="project-button">Django</button>
+                    <button class="project-button">Python</button>
+                    <button class="project-button">MySQL</button>
+                    <button class="project-button">Unity</button>
+                    <button class="project-button">Postman API</button>
+                    <button class="project-button">GitHub</button>
+                </div>
+            </div>
+        </div>
         <p style="margin-top: 30px;"></p>
         <div class="projects">
             <div class="carousel">
@@ -172,6 +248,7 @@
                     <button class="project-button">MySQL</button>
                     <button class="project-button">Express.js</button>
                     <button class="project-button">Node.js</button>
+                    <button class="project-button">Postman API</button>
                 </div>
             </div>
         </div>
@@ -186,11 +263,10 @@
                     I have worked on making my personal portfolio from scratch using the knowledge I have obtained
                     from classes I have taken and experiences I have had. Through doing this project, I have learned 
                     a lot more about the fundamentals of web development such as different CSS properties, screen resizing, 
-                    and implementing JS intro basic HTML files. As I am still working on updating my website with my projects, 
+                    and implementing JS into basic HTML files. As I am still working on updating my website with my projects, 
                     feel free to take a look at what I have so far! Before you head
-                    out, let me tell you a little about me. I am currently a senior at Virginia Tech majoring in
-                    Computer Science with minors in Human Computer Interaction & Mathematics. I enjoy hiking,
-                    biking, and all things outdoors, you name it and I am there! I always love trying new things and
+                    out, let me tell you a little about me. I am currently a graduate student at Virginia Tech pursing a Masters of Engineering in Computer Science with a focus in Software Development and Applications. I enjoy climbing,
+                    biking, hiking, and all things outdoors, you name it and I am there! I always love trying new things and
                     taking part in new adventures. At school, you will typically find me debugging my code, running
                     to some meeting, or jump roping with my friends. Okay, that's all from me, see you on the flip
                     side! &#128579;

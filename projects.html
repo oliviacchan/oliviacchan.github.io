@@ -18,10 +18,12 @@
     const imagesWeb = ["web-project/home.png", "web-project/category.png", "web-project/cart.png", "web-project/checkout.png"];
     const imagesDB = ["db-project/login.png", "db-project/dashboard.png", "db-project/employee.png", "db-project/customer.png", "db-project/new.png", "db-project/list.png", "db-project/update.png"];
     const imagesHCI = ["hci-capstone/garden.png", "hci-capstone/tasks.png", "hci-capstone/recipes.png", "hci-capstone/memory.png"];
+    const imagesEng = ["parking-function/input.png", "parking-function/simulator_proj.png", "parking-function/transcript.png"];
 
     let currentIndexWeb = 0;
     let currentIndexDB = 0;
     let currentIndexHCI = 0;
+    let currentIndexEng = 0;
 
     function nextImageWeb() {
         currentIndexWeb = (currentIndexWeb + 1) % imagesWeb.length;
@@ -53,6 +55,16 @@
         document.getElementById("hci-capstone-image").src = imagesHCI[currentIndexHCI];
     }
 
+    function nextImageEng() {
+        currentIndexEng = (currentIndexEng + 1) % imagesEng.length;
+        document.getElementById("software-eng-image").src = imagesEng[currentIndexEng];
+    }
+
+    function prevImageHCI() {
+        currentIndexEng = (currentIndexEng - 1 + imagesEng.length) % imagesEng.length;
+        document.getElementById("software-eng-image").src = imagesEng[currentIndexEng];
+    }
+
     function proj1() {
         var proj = document.getElementById("proj1");
         var button = document.getElementById("accButt");
@@ -62,13 +74,13 @@
                 proj.style.display = "none";
             }, 500);
             proj.style.maxHeight = "0px";
-            button.textContent = "Read more";
+            document.getElementById("accButt1").textContent = "Read more"
         } else {
             proj.style.display = "block";
             setTimeout(function() {
                 proj.style.maxHeight = proj.scrollHeight + "px";
             }, 10);
-            button.textContent = "See less";
+            document.getElementById("accButt1").textContent = "Show less"
         }
     }
 
@@ -86,7 +98,7 @@
             setTimeout(function() {
                 proj.style.maxHeight = proj.scrollHeight + "px";
             }, 10);
-            document.getElementById("accButt2").textContent = "See less"
+            document.getElementById("accButt2").textContent = "Show less"
         } 
     }
 
@@ -104,7 +116,25 @@
             setTimeout(function() {
                 proj.style.maxHeight = proj.scrollHeight + "px";
             }, 10);
-            document.getElementById("accButt3").textContent = "See less"
+            document.getElementById("accButt3").textContent = "Show less"
+        } 
+    }
+
+    function proj4() {
+        var proj = document.getElementById("proj4");
+        if(proj.style.maxHeight && proj.style.maxHeight !== "0px") {
+            setTimeout(function() {
+                proj.style.display = "none";
+            }, 500);
+            proj.style.maxHeight = "0px";
+            document.getElementById("accButt4").textContent = "Read more"
+        }
+        else {
+            proj.style.display = "block";
+            setTimeout(function() {
+                proj.style.maxHeight = proj.scrollHeight + "px";
+            }, 10);
+            document.getElementById("accButt4").textContent = "Show less"
         } 
     }
 </script> 
@@ -114,6 +144,51 @@
     <section>
         <h1>School Projects</h1>
         <p style="margin-top: 30px;"></p>
+        <div class="projects">
+            <div class="carousel">
+                <div style="justify-self: end; padding-right: 5px;">
+                    <button class="carousel-button" onclick="prevImageEng()">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div>
+                    <img id="software-eng-image" src="parking-function/input.png" class="carousel-image">
+                </div>
+                <div style="padding-left: 5px;">
+                    <button class="carousel-button" onclick="nextImageEng()">
+                        <i class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="projects-content">
+                <h3>Parking Function Testing Simulator</h3>
+                <p style="margin-top: -12px">CS 5704: Software Engineering</p>
+                <p style="margin-top: -12px"><em>August 2025 - December 2025</em></p>
+                <div>
+                    Our simulator allows users to specify or randomize parameters, determine whether a given preference vector is a parking function, and export datasets for research analysis.
+                </div>
+                <div class="panel" id="proj4">
+                    <p>
+                        Our approach includes a user-focused design that allows flexibility in testing any desired case. To support this, we divided the application into three main sections of implementation: user-based input, interface test-case simulation and results, and the parsing of inputs and cases to compute the correct result. With these three components working together, the simulator enables users to test any preference vector and observe a live simulation demonstrating how the vector behaves, ultimately determining whether it is or is not a parking function.
+                        <br>
+                        <br>
+                        The input section allows the user to specify whether the case includes a tau-indifferent car, whether the test is a single-case or multiple-case run, and whether the user will provide specific preference vectors or have them randomly generated. Based on these inputs, the user receives either a live simulation showing whether the vector is a parking function and its resulting outcome vector, or a downloadable CSV summarizing the results of multiple cases that were run. The live simulation is shown when a single case is selected. The simulator displays a step-by-step process of each car attempting to park, moving to a valid or invalid spot according to the parking rules. If the given preference vector is not a parking function, the simulation terminates. The backend includes validity checking of user input, ensuring that data is correctly formatted and can be parsed without error. Additionally, the backend is responsible for generating and delivering the downloadable CSV file, which presents the result of each preference vector case and indicates whether the vector is a parking function and, if it is, the corresponding outcome vector.
+                        <br>
+                        <br>
+                        Overall, by connecting theoretical combinatorics with applied software development, this project supports ongoing research into generalized parking function models. 
+                    </p>
+                </div>
+                <button class="accordion" onclick="proj4()" id="accButt4">Read more</button>
+                <div>
+                    <button class="project-button">HTML</button>
+                    <button class="project-button">CSS</button>
+                    <button class="project-button">Django</button>
+                    <button class="project-button">Python</button>
+                    <button class="project-button">GitHub</button>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 50px;"></p>
         <div class="projects">
             <div class="carousel">
                 <div style="justify-self: end; padding-right: 5px;">
@@ -148,7 +223,7 @@
                         Overall, by designing and evaluating Bun Appétit, my group and I investigated how task-oriented design, asynchronous interaction, and the presence of a virtual companion can help reduce communication barriers and foster emotional connection among family members living apart. This project helped me learn more about SQL and API call, providing me more exposure to backend development.
                     </p>
                 </div>
-                <button class="accordion" onclick="proj3()" id="accButt">Read more</button>
+                <button class="accordion" onclick="proj3()" id="accButt3">Read more</button>
                 <div>
                     <button class="project-button">Django</button>
                     <button class="project-button">Python</button>
@@ -194,7 +269,7 @@
                         Overall, this application allowed for dynamically-generated content while also considering design principles of reusability, consistency, scalability, and more. This project was a great experience as I was able to get hands-on practice with a full stack project, implementing everything from the frontend to the backend of the project.
                     </p>
                 </div>
-                <button class="accordion" onclick="proj1()" id="accButt">Read more</button>
+                <button class="accordion" onclick="proj1()" id="accButt1">Read more</button>
                 <div>
                     <button class="project-button">HTML</button>
                     <button class="project-button">CSS</button>
